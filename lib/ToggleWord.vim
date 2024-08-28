@@ -32,16 +32,23 @@ export class ToggleWord
     this.cursor_new = std.Cursor.new()
   enddef
 
-  def Main(type: string)
+  def Main(type: string, count: number)
     this.Refresh()
     if this._ToggleWords()
+      for _ in range(count - 1)
+        this._ToggleWords()
+      endfor
       return
     elseif type == '+'
-      this.cursor_old.SetCursor()
-      normal! 
+      for _ in range(count)
+        this.cursor_old.SetCursor()
+        normal! 
+      endfor
     elseif type == '-'
-      this.cursor_old.SetCursor()
-      normal! 
+      for _ in range(count)
+        this.cursor_old.SetCursor()
+        normal! 
+      endfor
     else
       throw 'ToggleWord fallback type error'
     endif
