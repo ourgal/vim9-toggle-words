@@ -11,7 +11,7 @@ import autoload '../lib/ToggleWord.vim' as lib
 const toggle_words = lib.ToggleWord.new()
 
 nnoremap <Plug>Vim9TogglePlus <scriptcmd>toggle_words.Main('+', v:count1)<cr>
-nnoremap <Plug>Vim9ToggleMinus <scriptcmd>toggle_words.Main('+', v:count1)<cr>
+nnoremap <Plug>Vim9ToggleMinus <scriptcmd>toggle_words.Main('-', v:count1)<cr>
 
 nnoremap <c-a> <Plug>Vim9TogglePlus
 nnoremap <c-x> <Plug>Vim9ToggleMinus
